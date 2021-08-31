@@ -1,26 +1,33 @@
-import { useEffect, useState } from 'react';
-import { getCounties, getReportByCountry } from './apis';
+import React, { useEffect, useMemo } from 'react';
+import { sortBy } from 'lodash';
 import CountrySelector from './components/CountrySelector';
-import Highlight from './components/Highlight';
+import { getCountries, getReportByCountry } from './components/apis';
 import Summary from './components/Summary';
+import Highlight from './components/Highlight';
+import { Container, Typography } from '@material-ui/core';
+import '@fontsource/roboto';
+import moment from 'moment';
+import 'moment/locale/vi';
 
+moment.locale('en');
 
-function App() {
-  const [countries, setCountries] = useState([]);
-  const [selecCountryId, setSelectedCountryId] = useState (''); 
+const App = () => {
+  const [countries, setCountries] = React.useState([]);
+  const [selectedCountryId, setSelectedCountryId] = React.useState('');
+  const [report, setReport] = React.useState([]);
 
+  useEffect(() => {
+    getCountries().then((res) => {
+      const { data } = res;
+      const countries = sortBy(data, 'Country');
+      setCountries(countries);
+      setSelectedCountryId('vn');
+    });
+  }, []);
 
-  useEffect(()=> {
-    getCounties()
-    .then(res =>{
-      console.log({res})
-      setCountries(res.data)
-    })
-  }, [])
-
-  const handleOnchange = (e) =>{
-    setSelectedCountryId(e.target.value)
-  };
+  const handleOnChange = React.useCallback((e) => {
+    setSelectedCountryId(e.target.value);
+  }, []);
 
   useEffect(() => {
     if (selectedCountryId) {
@@ -35,15 +42,46 @@ function App() {
       });
     }
   }, [selectedCountryId, countries]);
-  
-  return (
 
-    <div>
-      <CountrySelector countries = {countries} handleOnchange={handleOnchange}/>
-      <Highlight></Highlight>
-      <Summary></Summary>
-    </div>
+  const summary = useMemo(() => {
+    if (report && report.length) {
+      const latestData = report[report.length - 1];
+      return [
+        {
+          title: ' Positive Cases',
+          count: latestData.Confirmed,
+          type: 'confirmed',
+        },
+        {
+          title: 'Recovered',
+          count: latestData.Recovered,
+          type: 'recovered',
+        },
+        {
+          title: 'Dead',
+          count: latestData.Deaths,
+          type: 'death',
+        },
+      ];
+    }
+    return [];
+  }, [report]);
+
+  return (
+    <Container style={{ marginTop: 20 }}>
+      <Typography variant='h2' component='h2'>
+        COVID-19 Statistic
+      </Typography>
+      <Typography>{moment().format('LLL')}</Typography>
+      <CountrySelector
+        handleOnChange={handleOnChange}
+        countries={countries}
+        value={selectedCountryId}
+      />
+      <Highlight summary={summary} />
+      <Summary countryId={selectedCountryId} report={report} />
+    </Container>
   );
-}
+};
 
 export default App;

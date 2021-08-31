@@ -4,76 +4,110 @@ import HighchartsReact from 'highcharts-react-official';
 import moment from 'moment';
 import { Button, ButtonGroup } from '@material-ui/core';
 
+const generateOptions = (data) => {
+  const categories = data.map((item) => moment(item.Date).format('DD/MM/YYYY'));
 
-const generateOptions = ()=>{
-    const generateOptions = (data) => {
-        const categories = data.map((item) => moment(item.Date).format('DD/MM/YYYY'));
-      
-        return {
-          chart: {
-            height: 500,
-          },
+  return {
+    chart: {
+      height: 500,
+    },
+    title: {
+      text: 'Number of Positive Cases',
+    },
+    xAxis: {
+      categories: categories,
+      crosshair: true,
+    },
+    colors: ['#00008B'],
+    yAxis: {
+      min: 0,
+      title: {
+        text: null,
+      },
+      labels: {
+        align: 'right',
+      },
+    },
+    tooltip: {
+      headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+      pointFormat:
+        '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+        '<td style="padding:0"><b>{point.y} ca</b></td></tr>',
+      footerFormat: '</table>',
+      shared: true,
+      useHTML: true,
+    },
+    plotOptions: {
+      column: {
+        pointPadding: 0.2,
+        borderWidth: 0,
+      },
+    },
+    series: [
+      {
+        name: 'Number of Positive Cases',
+        data: data.map((item) => item.Confirmed),
+      },
+    ],
+  };
+};
 
-          title: {
-            text: 'Total Infected',
-          },
+export default function LineChart({ data }) {
+  const [options, setOptions] = useState({});
+  const [reportType, setReportType] = useState('all');
+  console.log({ data });
 
-          xAxis: {
-            categories: categories,
-            crosshair: true,
-          },
+  useEffect(() => {
+    let customData = [];
+    switch (reportType) {
+      case 'all':
+        customData = data;
+        break;
+      case '30':
+        customData = data.slice(Math.max(data.length - 30, 1));
+        break;
+      case '7':
+        customData = data.slice(Math.max(data.length - 7, 1));
+        break;
 
-          colors: ['#fa8072'],
-          yAxis: {
-            min: 0,
-            title: {
-              text: null,
-            },
-            labels: {
-              align: 'right',
-            },
-          },
-
-          tooltip: {
-            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-            pointFormat:
-              '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-              '<td style="padding:0"><b>{point.y} ca</b></td></tr>',
-            footerFormat: '</table>',
-            shared: true,
-            useHTML: true,
-          },
-
-          plotOptions: {
-            column: {
-              pointPadding: 0.2,
-              borderWidth: 0,
-            },
-          },
-          
-          series: [
-            {
-              name: 'Total Infected',
-              data: data.map((item) => item.Confirmed),
-            },
-          ],
-        };
-      };
+      default:
+        customData = data;
+        break;
     }
 
-export default function LineChart({data}) {
-    const [options, setOptions] = useState({ });
-    
-    useEffect(()=> {
-        setOptions(generateOptions(data));
-    }, [data])
+    setOptions(generateOptions(customData));
+  }, [data, reportType]);
 
-    return (
-        <div>
-            <HighchartsReact
-            highcharts ={Highcharts}
-            option ={{options}}
-            />
-        </div>
-    )
+  return (
+    <>
+      <ButtonGroup
+        size='small'
+        aria-label='small outlined button group'
+        style={{
+          display: 'flex',
+          justifyContent: 'flex-end',
+        }}
+      >
+        <Button
+          color={reportType === 'all' ? 'secondary' : ''}
+          onClick={() => setReportType('all')}
+        >
+          All
+        </Button>
+        <Button
+          color={reportType === '30' ? 'secondary' : ''}
+          onClick={() => setReportType('30')}
+        >
+          30 Days
+        </Button>
+        <Button
+          color={reportType === '7' ? 'secondary' : ''}
+          onClick={() => setReportType('7')}
+        >
+          7 Days
+        </Button>
+      </ButtonGroup>
+      <HighchartsReact highcharts={Highcharts} options={options} />
+    </>
+  );
 }
