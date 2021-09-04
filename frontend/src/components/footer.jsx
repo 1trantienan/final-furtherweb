@@ -18,6 +18,7 @@ const Footer = () => {
                 <em>Tran Viet Anh</em>
               </b>
               <b>
+              <br />
                 <em>Nguyen Minh Duong</em>
               </b>
               <br />
