@@ -1,87 +1,38 @@
-import React, { useEffect, useMemo } from 'react';
-import { sortBy } from 'lodash';
-import CountrySelector from './components/CountrySelector';
-import { getCountries, getReportByCountry } from './components/apis';
-import Summary from './components/Summary';
-import Highlight from './components/Highlight';
-import { Container, Typography } from '@material-ui/core';
-import '@fontsource/roboto';
-import moment from 'moment';
-import 'moment/locale/vi';
+import React from "react";
+import "./App.css";
+import "./css/cases.css";
+import HeaderNav from "./components/navbar.jsx";
+import HomePage from "./components/HomePage.jsx";
+import VaccineInfo from "./components/vaccineData/VaccineInfo";
+import CovidInfo from "./components/cases/covidInfo";
+import CountryView from "./components/cases/countryView";
+import About from "./components/about";
+import Footer from "./components/footer.jsx";
+import  VaccineCompany from './components/vaccineData/vaccineManufacture.jsx';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/css/bootstrap.css";
 
-moment.locale('en');
-
-const App = () => {
-  const [countries, setCountries] = React.useState([]);
-  const [selectedCountryId, setSelectedCountryId] = React.useState('');
-  const [report, setReport] = React.useState([]);
-
-  useEffect(() => {
-    getCountries().then((res) => {
-      const { data } = res;
-      const countries = sortBy(data, 'Country');
-      setCountries(countries);
-      setSelectedCountryId('vn');
-    });
-  }, []);
-
-  const handleOnChange = React.useCallback((e) => {
-    setSelectedCountryId(e.target.value);
-  }, []);
-
-  useEffect(() => {
-    if (selectedCountryId) {
-      const selectedCountry = countries.find(
-        (country) => country.ISO2 === selectedCountryId.toUpperCase()
-      );
-      getReportByCountry(selectedCountry.Slug).then((res) => {
-        console.log('getReportByCountry', { res });
-        // remove last item = current date
-        res.data.pop();
-        setReport(res.data);
-      });
-    }
-  }, [selectedCountryId, countries]);
-
-  const summary = useMemo(() => {
-    if (report && report.length) {
-      const latestData = report[report.length - 1];
-      return [
-        {
-          title: ' Positive Cases',
-          count: latestData.Confirmed,
-          type: 'confirmed',
-        },
-        {
-          title: 'Recovered',
-          count: latestData.Recovered,
-          type: 'recovered',
-        },
-        {
-          title: 'Dead',
-          count: latestData.Deaths,
-          type: 'death',
-        },
-      ];
-    }
-    return [];
-  }, [report]);
-
+function App() {
   return (
-    <Container style={{ marginTop: 20 }}>
-      <Typography variant='h2' component='h2'>
-        COVID-19 Statistic
-      </Typography>
-      <Typography>{moment().format('LLL')}</Typography>
-      <CountrySelector
-        handleOnChange={handleOnChange}
-        countries={countries}
-        value={selectedCountryId}
-      />
-      <Highlight summary={summary} />
-      <Summary countryId={selectedCountryId} report={report} />
-    </Container>
+    <div className="App">
+      <div className="content-wrap">
+        <Router>
+          <HeaderNav />
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route exact path="/vaccination" component={VaccineInfo} />
+            <Route exact path="/covidInfo" component={CovidInfo} />
+            <Route exact path="/countryView/:countryName" component={CountryView} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/vaccineCompany" component={VaccineCompany} />
+                     
+          </Switch>
+        </Router>
+      </div>
+      <Footer/>
+    </div>
   );
-};
+}
 
 export default App;
