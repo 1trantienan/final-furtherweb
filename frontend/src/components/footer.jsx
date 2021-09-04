@@ -11,13 +11,26 @@ const Footer = () => {
             <h5 className="list-unstyled">By:</h5>
             <p>
               <b>
-                <em>Shweta Korulkar</em>
+                <em>Tran Tien An</em>
               </b>
               <br />
               <b>
-                <em>Sree Vandana</em>
+                <em>Tran Viet Anh</em>
               </b>
+              <b>
+                <em>Nguyen Minh Duong</em>
+              </b>
+              <br />
+              <b>
+                <em>Alex Shaw</em>
+              </b>
+              <br />
+              <b>
+                <em>Do Vu Thanh Vinh</em>
+              </b>
+              <br />
             </p>
+
           </div>
           <div className="col ">
             <h4>Powered By</h4>
@@ -31,17 +44,7 @@ const Footer = () => {
                 <a
                   href="https://www.heroku.com/"
                   target="_blank"
-                  rel="noreferrer"
-                >
-                  <b>Heroku</b>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://getbootstrap.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                  rel="noreferrer">
                   <b>Bootstrap</b>
                 </a>
               </li>

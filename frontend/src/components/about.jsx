@@ -9,13 +9,13 @@ export default function About() {
         <img src={pic2} alt="shwetha-Avatar" className="aboutImg"  />
         <div className="aboutContainer">
           <h4 className="about-name">
-            <b>Shweta Korulkar</b>
+            <b>Tran Tien An</b>
           </h4>
           <p className="about-task">
             Task: VaccinationInfo, Vaccine Manufacture and Home page
           </p>
           <a
-            href="https://github.com/sk192"
+            href="https://github.com/1trantienan"
             className="about-gitrepo-link"
           >
             GitHub{" "}
@@ -29,13 +29,13 @@ export default function About() {
         <img src={pic2} alt="vandana-Avatar" className="aboutImg" />
         <div className="aboutContainer">
           <h4 className="about-name">
-            <b>Sree Vandana</b>
+            <b>Tran Viet Anh</b>
           </h4>
           <p className="about-task">
             Task: Cases Status (global View and Country View) and About Page
           </p>
           <a
-            href="https://github.com/Sree-Vandana"
+            href="/"
             className="about-gitrepo-link"
           >
             GitHub
