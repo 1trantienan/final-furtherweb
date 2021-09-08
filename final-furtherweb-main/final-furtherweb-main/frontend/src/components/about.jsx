@@ -1,7 +1,6 @@
 
 // import pic1 from "../components/images/shweta.JPG";
 import pic2 from "../components/images/pic2.jpg";
-import pic3 from "../components/images/pic3.jpg";
 
 export default function About() {
   return (
@@ -107,13 +106,13 @@ export default function About() {
         </div>
       </div>
       <div className="aboutCard about2">
-        <img src={pic2} alt="vandana-Avatar" className="aboutImg" />
+        <img src={pic3} alt="vandana-Avatar" className="aboutImg" />
         <div className="aboutContainer">
           <h4 className="about-name">
-            <b>Tran Viet Anh</b>
+            <b>Aslexander Joseph Shaw</b>
           </h4>
           <p className="about-task">
-            Task: Cases Status (global View and Country View) and About Page
+            Task: Login & Registration Page
           </p>
           <a
             href="/"
