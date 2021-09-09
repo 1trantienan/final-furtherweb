@@ -89,10 +89,10 @@ export default function About() {
         <img src={pic2} alt="vandana-Avatar" className="aboutImg" />
         <div className="aboutContainer">
           <h4 className="about-name">
-            <b>Tran Viet Anh</b>
+            <b>Do Vu Thanh Vinh</b>
           </h4>
           <p className="about-task">
-            Task: Cases Status (global View and Country View) and About Page
+            Task: Login & Registration Page
           </p>
           <a
             href="/"
