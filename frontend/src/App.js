@@ -3,6 +3,8 @@ import "./App.css";
 import "./css/cases.css";
 import HeaderNav from "./components/navbar.jsx";
 import HomePage from "./components/HomePage.jsx";
+import Register from "./components/Register/register.jsx";
+
 import VaccineInfo from "./components/vaccineData/VaccineInfo";
 import CovidInfo from "./components/cases/covidInfo";
 import CountryView from "./components/cases/countryView";
@@ -20,7 +22,7 @@ function App() {
         <Router>
           <HeaderNav />
           <Switch>
-            <Route exact path="/" component={HomePage} />
+            <Route exact path="/" component={Register} />
             <Route exact path="/vaccination" component={VaccineInfo} />
             <Route exact path="/covidInfo" component={CovidInfo} />
             <Route exact path="/countryView/:countryName" component={CountryView} />
