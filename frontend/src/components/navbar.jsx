@@ -51,6 +51,7 @@ function HeaderNav() {
               About
             </Nav.Link>
           </Nav>
+          
         </Navbar.Collapse>
       </Navbar>
     </div>
