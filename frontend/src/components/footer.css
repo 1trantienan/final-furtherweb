@@ -1,63 +1,65 @@
 footer {
-  color: white;
-  background :linear-gradient(90deg, rgba(5, 33, 65), black);
-  padding-top: 1em;
-  bottom: 0;
-  width: 100%;
-  height: 230px;
-  opacity: 1;
-  overflow: hidden;
-}
-.list-unstyled{
-   font-size: 12pt;
-}
-footer  ul {
-  padding-left: 7%;
-  list-style-type: disc;
+    color: white;
+    background: linear-gradient(90deg, rgba(5, 33, 65), black);
+    padding-top: 1em;
+    bottom: 0;
+    width: 100%;
+    height: 230px;
+    opacity: 1;
+    overflow: hidden;
+    font-family: 'Urbanist', sans-serif;
 }
 
-
-footer  ul li {
-  cursor: pointer;
-  font-size: 12pt;
-  font-weight: 500;
-  font-style: italic;
-  margin: 0 5px 0 0;
-  opacity: 0.7;
-  transition: all 0.4s ease;
-} 
-
- footer  ul li:hover {
-  opacity: 1;
- 
+.list-unstyled {
+    font-size: 12pt;
 }
 
-footer  ul li:active {
-  opacity: 1;
+footer ul {
+    padding-left: 7%;
+    list-style-type: disc;
 }
 
-footer  ul li a {
-  text-decoration: none;
-  color: inherit;
-  
+footer ul li {
+    cursor: pointer;
+    font-size: 12pt;
+    font-weight: 500;
+    font-style: italic;
+    margin: 0 5px 0 0;
+    opacity: 0.7;
+    transition: all 0.4s ease;
 }
-footer  ul li a:hover {
-  color: wheat;
-  text-decoration: none;
+
+footer ul li:hover {
+    opacity: 1;
 }
+
+footer ul li:active {
+    opacity: 1;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: inherit;
+}
+
+footer ul li a:hover {
+    color: wheat;
+    text-decoration: none;
+}
+
 hr {
-  padding: 0;
-  margin: 0;
-  height: 5px;
-  background-color: whitesmoke;
+    padding: 0;
+    margin: 0;
+    height: 5px;
+    background-color: whitesmoke;
 }
-.row{
-  display: inline-block;
-  width: 100%;
-  
 
+.row {
+    display: inline-block;
+    width: 100%;
 }
-.col{
-  width: 33%;
-  float: left;
+
+.col {
+    width: 33%;
+    float: left;
 }

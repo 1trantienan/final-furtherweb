@@ -55,5 +55,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "This dashboard provides information about \r * **Vaccination.**\r   - Number of people vaccinated per country. (along with comparison bar-graphs between each country)\r   - Different vaccine manufacturers in each country. (A graph to show which is highly used).",
+  "main": "index.js",
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC"
 }

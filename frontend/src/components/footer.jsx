@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container">
         <div className="row">
           <div className="col ">
-            <h4>COVID-19 DASHBOARD</h4>
+            <h4>COVID-19 STATISTICS</h4>
             <h5 className="list-unstyled">By:</h5>
             <p>
               <b>

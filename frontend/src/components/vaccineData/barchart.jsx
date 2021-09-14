@@ -24,14 +24,20 @@ class Barchart extends Component {
       chips: {
         background: "green",
       },
+      
       searchBox: {
         borderBottom: "1px solid blue",
         borderRadius: "5px",
         backgroundColor: "white",
+        fontSize: "18px",
+        justifyContent: "center"
       },
       multiselectContainer: {
-        color: "black",
+        color: "darkblue",
       },
+      inputField:{
+        margin: "0px 30px"
+      }
     };
   }
   numFormate = (num) => {
@@ -120,8 +126,8 @@ class Barchart extends Component {
             <b>Countries vaccine information</b>
           </h1>
         </div>
-        <div className="check">
-          <Multiselect
+        <div className="multiselect">
+        <Multiselect
             options={this.state.country_names}
             placeholder="Select upto 4 countries"
             onSelect={this.onSelect}
@@ -135,6 +141,8 @@ class Barchart extends Component {
             onRemove={this.onRemove}
           />
         </div>
+        
+          
         <div className="bar">
           <StackedBar
             barCountryData={this.state.country_label}
@@ -143,7 +151,6 @@ class Barchart extends Component {
             barTotalDose={this.state.total_dose}
           />
         </div>
-        
         <div className="table-responsive table-sm table-wrapper">
           <TableData vData={this.state.whole_data} />
         </div>
