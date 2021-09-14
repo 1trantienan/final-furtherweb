@@ -11,7 +11,7 @@ export default function StackedBar(props) {
           offset: true,
           datasets: [
             {
-              label: "people_partially_vaccinated",
+              label: "People partially vaccinated",
               pointstyle: "rectRounded",
               backgroundColor: "#6ED3FF",
               barThickness: 40,
@@ -19,7 +19,7 @@ export default function StackedBar(props) {
               data: props.barPartiallyData,
             },
             {
-              label: "people_fully_vaccinated",
+              label: "People fully vaccinated",
               backgroundColor: "#1497FF",
               barThickness: 40,
               categoryPercentage: 1,
@@ -27,7 +27,7 @@ export default function StackedBar(props) {
               data: props.barFullyData,
             },
             {
-              label: "total_vaccine_dose",
+              label: "Total vaccine dose",
               backgroundColor: "#ff0000",
               barThickness: 40,
               categoryPercentage: 1,
@@ -45,6 +45,7 @@ export default function StackedBar(props) {
               top: 0,
               right: 40,
               bottom: 10,
+              left: 20
             },
           },
           legend: {
@@ -62,6 +63,7 @@ export default function StackedBar(props) {
               {
                 stacked: true,
                 ticks: {
+                  maxTicksLimit: 4,
                   padding: 5,
                 },
                 gridLines: {
@@ -78,7 +80,7 @@ export default function StackedBar(props) {
                 },
                 ticks: {
                   beginAtZero: true,
-                  maxTicksLimit: 6,
+                  maxTicksLimit: 4,
                   padding: 20,
 
                   callback(n) {

@@ -38,9 +38,9 @@ class VaccineCompany extends Component {
     ];
 
     this.style1 = {
-      chips: {
-        background: "green",
-      },
+      // chips: {
+      //   background: "darkblue",
+      // },
       searchBox: {
         borderRadius: "5px",
         backgroundColor: "white",
@@ -48,6 +48,9 @@ class VaccineCompany extends Component {
       multiselectContainer: {
         color: "black",
       },
+      inputField:{
+        margin: "0px 5px"
+      }
     };
   }
 
@@ -61,6 +64,7 @@ class VaccineCompany extends Component {
 
       let i = 0;
       responseData.data.forEach((element) => {
+        
         let country = {};
 
         if (jsonData.hasOwnProperty(element.location)) {
@@ -114,26 +118,30 @@ class VaccineCompany extends Component {
   render() {
     return (
       <div className="containerDiv">
-        <h1 className="h1_heading">Vaccine By Country</h1>
-        <div className="selectDiv">
-          <Multiselect
-            options={this.state.countryNames}
-            placeholder="Select country"
-            onSelect={this.onSelect}
-            displayValue="name"
-            style={this.style1}
-            singleSelect="true"
-            value="selectbox"
-            className="multiselect_container"
-          />
-        </div>
-        <div className="piediv">
-          <DonutChart
-            data={this.state.piechart_arr}
-            colors={this.state.color}
-            onMouseEnter={(item) => item}
-            legend={true}
-          />
+        <div className="tableHeading">
+          <h1>
+            <b>Vaccine By Country</b>
+          </h1>
+          <div className="selectDiv">
+            <Multiselect
+              options={this.state.countryNames}
+              placeholder="Select a country"
+              onSelect={this.onSelect}
+              displayValue="name"
+              style={this.style1}
+              singleSelect="true"
+              value="selectbox"
+              className="multiselect_container"
+            />
+          </div>
+          <div className="piediv">
+            <DonutChart
+              data={this.state.piechart_arr}
+              colors={this.state.color}
+              onMouseEnter={(item) => item}
+              legend={true}
+            />
+          </div>
         </div>
       </div>
     );

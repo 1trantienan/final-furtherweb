@@ -1,7 +1,7 @@
 
 // import pic1 from "../components/images/shweta.JPG";
 import pic2 from "../components/images/pic2.jpg";
-import pic3 from "../components/images/pic3.jpg";
+// import pic3 from "../components/images/pic3.jpg";
 
 export default function About() {
   return (

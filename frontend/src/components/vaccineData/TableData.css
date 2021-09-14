@@ -1,67 +1,69 @@
 .heading {
-  text-align: center;
-  background-color: #ccc;
-  font-size: 17px;
-  position: sticky;
-  top: 0;
+    text-align: center;
+    background-color: #ccc;
+    font-size: 17px;
+    position: sticky;
+    top: 0;
 }
 
 .countryUID {
-  text-align: center;
+    text-align: center;
 }
 
 div.table {
-  display: block;
-  overflow-y: scroll;
-  overflow-x: scroll;
-  border-collapse: collapse;
-  width: 100%;
+    display: block;
+    border-collapse: collapse;
+    width: 100%;
 }
+
 .table-wrapper {
-  max-height: 1000px;
-  border-radius: 10px;
-  margin-top: 40px;
-  margin-bottom: 50px;
-  margin-right: 5px;
+    max-height: 100px;
+    border-radius: 10px;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    margin-right: 5px;
+    width: 100%;
 }
 
 .tableColumn,
 .countryUID {
-  width: 20px;
-  height: 30px;
-  font-size: 17px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    width: 20px;
+    height: 30px;
+    font-size: 17px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
 tr {
-  align-content: center;
+    align-content: center;
 }
+
 tr:hover {
-  background-color: rgb(185, 179, 179);
+    background-color: rgb(185, 179, 179);
 }
 
 @media screen and (max-width: 414px) {
-  div.table {
-   
-    max-height: 500px;
-  }
+    div.table {
+        max-height: 500px;
+    }
 }
+
 @media screen and (min-width: 415px) and (max-width: 768px) {
-  div.table {
-    max-height: 770px;
-  }
+    div.table {
+        max-height: 770px;
+    }
 }
+
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  div.table {
-    max-height: 1200px;
-  }
+    div.table {
+        max-height: 1200px;
+    }
 }
+
 @media screen and (min-width: 1025px) {
-  div.table {
-    max-height: 1000px;
-  }
-  .table-wrapper {
-    max-height: 600px;
-  }
+    div.table {
+        max-height: 1000px;
+    }
+    .table-wrapper {
+        max-height: 600px;
+    }
 }
-
-
