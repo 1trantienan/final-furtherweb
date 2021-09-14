@@ -22,6 +22,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route exact path="/vaccination" component={VaccineInfo} />
+            <Route exact path="/register" component={Register} />
             <Route exact path="/covidInfo" component={CovidInfo} />
             <Route exact path="/countryView/:countryName" component={CountryView} />
             <Route exact path="/about" component={About} />
