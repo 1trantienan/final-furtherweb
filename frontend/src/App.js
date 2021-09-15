@@ -18,6 +18,9 @@ function App() {
     <div className="App">
       <div className="content-wrap">
         <Router>
+            <Switch>
+              <Route exact path="/" component={Login} />
+            </Switch>
           <HeaderNav />
           <Switch>
             <Route exact path="/" component={HomePage} />
