@@ -51,7 +51,9 @@ function HeaderNav() {
               About
             </Nav.Link>
           </Nav>
-          
+          <Nav.Link href="/register" className={isActive("/register")}>
+              Register
+            </Nav.Link>
         </Navbar.Collapse>
       </Navbar>
     </div>
