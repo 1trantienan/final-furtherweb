@@ -25,6 +25,8 @@ function HeaderNav() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
             <Nav.Link href="/" className={isActive("/")}>
+            </Nav.Link>
+            <Nav.Link href="/home" className={isActive("/home")}>
               Home
             </Nav.Link>
             <NavDropdown title="Vaccination" id="collasible-nav-dropdown">
@@ -49,6 +51,9 @@ function HeaderNav() {
             </Nav.Link>
             <Nav.Link eventKey={2} href="/about" className={isActive("/about")}>
               About
+            </Nav.Link>
+            <Nav.Link href="/login" className={isActive("/login")}>
+              Login
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
