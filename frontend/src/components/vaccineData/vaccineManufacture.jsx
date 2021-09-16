@@ -140,6 +140,7 @@ class VaccineCompany extends Component {
               colors={this.state.color}
               onMouseEnter={(item) => item}
               legend={true}
+              strokeColor="white"
             />
           </div>
         </div>

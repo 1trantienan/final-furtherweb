@@ -21,7 +21,7 @@ export default function StatusCards(props) {
         </p>
       </div>
 
-      <div className="recovered-card card-item-2">
+      {/* <div className="recovered-card card-item-2">
         <div className="statusCardHead-container">
           <h3 className="statusCardHead recover">Recovered</h3>
           <span>
@@ -34,7 +34,7 @@ export default function StatusCards(props) {
             .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}
         </h2>
         <p>{props.recoveryPercent}% recovery</p>
-      </div>
+      </div> */}
 
       <div className="deaths-card card-item-3">
         <div className="statusCardHead-container">

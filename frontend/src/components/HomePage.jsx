@@ -4,7 +4,9 @@ import "./homePage.css";
 const HomePage = () => {
   return (
     <div className="info">
+      <br />
       <h1 className="display-4">COVID-19 Statistics</h1>
+      <br />
       <p className="lead">
         This application is a statistical dashboard in which we show data/statistics on COVID-19
         cases by country and continent in a variety of forms (graphs and tables). Additionally,
