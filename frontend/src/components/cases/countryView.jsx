@@ -132,7 +132,7 @@ class CountryView extends Component {
           </div>
           <div className="country-grid-item cgrid-item-5">
             <h2 className="countryBarGraphHeading">
-              <b>Country Vs Gloab Covid Data</b>
+              <b>Country Vs Global Covid Data</b>
             </h2>
           </div>
           <div className="country-grid-item cgrid-item-6 countryViewBarGraph">
