@@ -91,3 +91,7 @@ const signInWithEmailAndPassword = async (email, password) => {
     sendPasswordResetEmail,
     logout,
   };
+
+//Citation
+// Faruq Yussuf, 2021,Handling user authentication with Firebase in your React apps, LogRocket
+// https://blog.logrocket.com/user-authentication-firebase-react-apps/?fbclid=IwAR1x8qWWpVDRmrIOWiv-gWRf3Wc_RA_bH99tHwBpHxzo5Q8zWRQ8cYlCDJ4
