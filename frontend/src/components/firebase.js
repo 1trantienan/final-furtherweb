@@ -1,5 +1,5 @@
 //firebase
-import firebase from "./frontend/node_modules/firebase";
+import firebase from "firebase";
 
 
 const firebaseConfig = {
