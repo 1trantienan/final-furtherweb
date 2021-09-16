@@ -52,8 +52,8 @@ function HeaderNav() {
             <i class="fa fa-user-circle" aria-hidden="true"></i> About
             </Nav.Link>
           </Nav>
-          <Nav.Link href="/register" className={isActive("/register")}>
-              Register
+          <Nav.Link href="/login" className={isActive("/login")}>
+              Log in
             </Nav.Link>
         </Navbar.Collapse>
       </Navbar>
