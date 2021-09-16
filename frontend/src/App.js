@@ -7,8 +7,7 @@ import VaccineInfo from "./components/vaccineData/VaccineInfo";
 import CovidInfo from "./components/cases/covidInfo";
 import CountryView from "./components/cases/countryView";
 import About from "./components/about";
-import Login from "./components/Login";
-import register from "./components/register";
+
 import Footer from "./components/footer.jsx";
 import  VaccineCompany from './components/vaccineData/vaccineManufacture.jsx';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -16,19 +15,17 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/css/bootstrap.css";
 
 
+
 function App() {
   return (
     <div className="App">
       <div className="content-wrap">
         <Router>
-            <Switch>
-              <Route exact path="/" component={Login} />
-            </Switch>
+        
           <HeaderNav />
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route exact path="/vaccination" component={VaccineInfo} />
-            <Route exact path="/register" component={register} />
             <Route exact path="/covidInfo" component={CovidInfo} />
             <Route exact path="/countryView/:countryName" component={CountryView} />
             <Route exact path="/about" component={About} />

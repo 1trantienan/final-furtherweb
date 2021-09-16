@@ -39,7 +39,7 @@ export default function About() {
             Task: VaccinationInfo, Vaccine Manufacture and About Page
           </p>
           <a
-            href="/"
+            href="https://github.com/nmdzw2910"
             className="about-gitrepo-link"
           >
             GitHub
@@ -59,7 +59,7 @@ export default function About() {
             Task: Backend, and Deployment of the Project
           </p>
           <a
-            href="/"
+            href="https://github.com/tranvietanh201"
             className="about-gitrepo-link"
           >
             GitHub
@@ -79,7 +79,7 @@ export default function About() {
             Task: Frontend Login Page
           </p>
           <a
-            href="/"
+            href="https://github.com/AskingAlex510"
             className="about-gitrepo-link"
           >
             GitHub
@@ -99,7 +99,7 @@ export default function About() {
             Task: Backend Login Page
           </p>
           <a
-            href="/"
+            href="https://github.com/vinhdo2001"
             className="about-gitrepo-link"
           >
             GitHub
