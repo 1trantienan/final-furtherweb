@@ -11,21 +11,17 @@ export default function TableData(props) {
               UID
             </th>
             <th scope="col" className="heading">
-              Country
-              <br />
-              Region
+              Country Region
             </th>
            
             <th scope="col" className="heading">
-              Doses <br /> admin
+              Doses admin
             </th>
             <th scope="col" className="heading">
-              received two <br /> doses
+              Received two doses
             </th>
             <th scope="col" className="heading">
-              received <br />
-              one <br />
-              dose
+              Received one dose
             </th>
           </tr>
         </thead>

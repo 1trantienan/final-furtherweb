@@ -1,11 +1,13 @@
-.homepage{
+.homepage {
     margin-top: 100px;
     width: 100vw;
     height: 49vh;
-   color: darkorange; 
-   font-style: italic;
+    color: darkorange;
+    font-style: italic;
 }
-div.jumbotron{
-    text-align: left;
-    
+
+.info {
+    font-family: 'Urbanist', sans-serif;
+    color: aliceblue;
+    padding: 0px 50px;
 }

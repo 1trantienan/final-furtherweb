@@ -145,10 +145,8 @@ export default function CountryDataTable(props) {
                     },
                   }}
                 >
-                  {item.country}{" "}
-                  <span className="gitExternalLinkIcon">
-                    <i className="fas fa-external-link-alt gitExternalLink"></i>
-                  </span>
+                  {item.country}{" "}<i className="fas fa-external-link-alt"></i>
+                  
                 </Link>
               </td>
 

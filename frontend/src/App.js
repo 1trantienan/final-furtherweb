@@ -3,15 +3,11 @@ import "./App.css";
 import "./css/cases.css";
 import HeaderNav from "./components/navbar.jsx";
 import HomePage from "./components/HomePage.jsx";
-import Register from "./components/Register/register.jsx";
-
 import VaccineInfo from "./components/vaccineData/VaccineInfo";
 import CovidInfo from "./components/cases/covidInfo";
 import CountryView from "./components/cases/countryView";
 import About from "./components/about";
-import Login from "./components/Login";
-import register from "./components/register";
-import Reset from "./components/Reset";
+
 import Footer from "./components/footer.jsx";
 import  VaccineCompany from './components/vaccineData/vaccineManufacture.jsx';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -19,24 +15,22 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/css/bootstrap.css";
 
 
+
 function App() {
   return (
     <div className="App">
       <div className="content-wrap">
         <Router>
-            <Switch>
-              <Route exact path="/" component={Login} />
-            </Switch>
+        
           <HeaderNav />
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route exact path="/vaccination" component={VaccineInfo} />
-            <Route exact path="/register" component={register} />
             <Route exact path="/covidInfo" component={CovidInfo} />
             <Route exact path="/countryView/:countryName" component={CountryView} />
             <Route exact path="/about" component={About} />
             <Route exact path="/vaccineCompany" component={VaccineCompany} />
-            <Route exact path="/register" component={Register} />
+                     
           </Switch>
         </Router>
       </div>
