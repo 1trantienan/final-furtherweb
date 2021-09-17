@@ -9,7 +9,7 @@ function Login() {
   const [user, loading, error] = useAuthState(auth);
   const history = useHistory();
   useEffect(() => {
-    if (user) history.replace("/dashboard");
+    if (user) history.replace("/home");
   }, [user, loading]);
   return (
     <div className="login">
