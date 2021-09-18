@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-browser.title = "Covid19"
+document.title = "Covid19"
 
 ReactDOM.render(
   // <React.StrictMode>
