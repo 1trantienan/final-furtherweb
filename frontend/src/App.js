@@ -15,7 +15,7 @@ import  VaccineCompany from './components/vaccineData/vaccineManufacture.jsx';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/css/bootstrap.css";
-import {ProtectedRoute} from "./components/PrivateRoute";
+import PrivateRoute from "./components/PrivateRoute";
 import {AuthProvider} from "./components/auth";
 
 
@@ -31,7 +31,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={Login} />
             <Route exact path="/register" component={register} />
-            <ProtectedRoute Redirect to="/dashboard " path="/login">
+            <PrivateRoute Redirect to="/dashboard " path="/login">
               <Route exact path="/dashboard" component={HomePage} />
               <Route exact path="/vaccination" component={VaccineInfo} />            
               <Route exact path="/covidInfo" component={CovidInfo} />
@@ -40,7 +40,7 @@ function App() {
               <Route exact path="/vaccineCompany" component={VaccineCompany} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/reset" component={Reset} />
-            </ProtectedRoute>
+            </PrivateRoute>
           </Switch>
         </Router>
         </AuthProvider>
