@@ -31,7 +31,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={Login} />
             <Route exact path="/register" component={register} />
-            <PrivateRoute Redirect to="/dashboard " path="/login">
+            <PrivateRoute Redirect to="/login " path="/login">
               <Route exact path="/dashboard" component={HomePage} />
               <Route exact path="/vaccination" component={VaccineInfo} />            
               <Route exact path="/covidInfo" component={CovidInfo} />
