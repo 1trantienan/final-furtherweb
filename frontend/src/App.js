@@ -23,11 +23,8 @@ function App() {
   return (
     <div className="App">
       <div className="content-wrap">
-<<<<<<< Updated upstream
-=======
         
         <AuthProvider>
->>>>>>> Stashed changes
         <Router>
           <HeaderNav />
           
