@@ -2,7 +2,7 @@
 import firebase from "firebase";
 
 
-const firebaseConfig = {
+ const firebaseConfig = {
   apiKey: "AIzaSyAeU6ZSPhsceWwDyw2tiiXPQ41b7sRdbVA",
   authDomain: "fwda3-b1862.firebaseapp.com",
   projectId: "fwda3-b1862",
@@ -92,6 +92,7 @@ const signInWithEmailAndPassword = async (email, password) => {
     sendPasswordResetEmail,
     logout,
   };
+  export default app;
 
 //Citation
 // Faruq Yussuf, 2021,Handling user authentication with Firebase in your React apps, LogRocket
