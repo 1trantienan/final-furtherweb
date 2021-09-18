@@ -13,6 +13,7 @@
     "d3-fetch": "^2.0.0",
     "d3-scale": "^3.3.0",
     "datamaps": "^0.5.9",
+    "firebase": "^8.10.0",
     "multiselect-react-dropdown": "^1.6.13",
     "react": "^17.0.2",
     "react-bar-chart": "^0.1.2",
@@ -59,7 +60,6 @@
   },
   "description": "This dashboard provides information about \r * **Vaccination.**\r   - Number of people vaccinated per country. (along with comparison bar-graphs between each country)\r   - Different vaccine manufacturers in each country. (A graph to show which is highly used).",
   "main": "index.js",
-  "devDependencies": {},
   "author": "",
   "license": "ISC"
 }
