@@ -13,6 +13,10 @@ import  VaccineCompany from './components/vaccineData/vaccineManufacture.jsx';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/css/bootstrap.css";
+import PrivateRoute from "./components/PrivateRoute";
+import PageNotFound from "./components/PageNotFound";
+import Reset from "./components/Reset";
+import Register from "./components/register";
 
 
 
@@ -23,14 +27,20 @@ function App() {
         <Router>
          
           <HeaderNav />
+          
+          <Route path="/Login" component={Login} exact={true} />
+
           <Switch>
-            <Route exact path="/" component={Login} />
-            <Route exact path="/vaccination" component={VaccineInfo} />
-            <Route exact path="/covidInfo" component={CovidInfo} />
-            <Route exact path="/countryView/:countryName" component={CountryView} />
-            <Route exact path="/about" component={About} />
-            <Route exact path="/vaccineCompany" component={VaccineCompany} />
-                     
+            <Route exact path="/dashboard" component={HomePage}/>
+            <Route path="/vaccination" component={VaccineInfo} />
+            <Route path="/covidInfo" component={CovidInfo} />
+            <Route path="/countryView/:countryName" component={CountryView} />
+            <Route path="/about" component={About} />
+            <Route path="/vaccineCompany" component={VaccineCompany} />
+            <Route path="/reset" component={Reset} />
+            <Route path="/register" component={Register} />
+            
+            <Route component={PageNotFound}/>
           </Switch>
         </Router>
       </div>

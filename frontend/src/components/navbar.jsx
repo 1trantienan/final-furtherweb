@@ -20,11 +20,11 @@ function HeaderNav() {
         variant="dark"
         className="navBarColor"
       >
-        <Navbar.Brand href="#">Covid-19 Dashboard</Navbar.Brand>
+        <Navbar.Brand href="/dashboard">Covid-19 Dashboard</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="/" className={isActive("/")}>
+            <Nav.Link href="/dashboard" className={isActive("/")}>
             <i class="fa fa-home" aria-hidden="true"></i> Home
             </Nav.Link> 
 
