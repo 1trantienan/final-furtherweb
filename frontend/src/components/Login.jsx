@@ -12,7 +12,7 @@ function Login() {
   
   const history = useHistory();
   useEffect(() => {
-    if (user) history.replace("/home");
+    if (user) history.replace("/dashboard");
   }, [user, loading]);
   return (
     <div className="login">

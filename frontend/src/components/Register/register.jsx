@@ -11,8 +11,7 @@ const Register = () => {
 
   return (
     <div className="container">
-      <form
-        
+      <form   
       >
         <label>Email</label>
         <input
