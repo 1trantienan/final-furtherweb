@@ -1,0 +1,23 @@
+.container {
+    margin: 200px auto;
+    width: 150px;
+  }
+  
+  form {
+    box-sizing: border-box;
+  }
+  
+  input {
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  button {
+    margin-top: 5px;
+  }
+  
+  label {
+
+    color: yellow;
+  }

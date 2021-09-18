@@ -20,15 +20,14 @@ function HeaderNav() {
         variant="dark"
         className="navBarColor"
       >
-        <Navbar.Brand href="#">Covid-19 Dashboard</Navbar.Brand>
+        <Navbar.Brand href="/dashboard">Covid-19 Dashboard</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="/" className={isActive("/")}>
-            </Nav.Link>
-            <Nav.Link href="/home" className={isActive("/home")}>
-              Home
-            </Nav.Link>
+            <Nav.Link href="/dashboard" className={isActive("/")}>
+            <i class="fa fa-home" aria-hidden="true"></i> Home
+            </Nav.Link> 
+
             <NavDropdown title="Vaccination" id="collasible-nav-dropdown">
               <NavDropdown.Item
                 href="/vaccination"
@@ -52,10 +51,10 @@ function HeaderNav() {
             <Nav.Link eventKey={2} href="/about" className={isActive("/about")}>
             <i class="fa fa-user-circle" aria-hidden="true"></i> About
             </Nav.Link>
-            <Nav.Link href="/login" className={isActive("/login")}>
-              Login
-            </Nav.Link>
           </Nav>
+          <Nav.Link href="/login" className={isActive("/login")}>
+              Log in
+            </Nav.Link>
         </Navbar.Collapse>
       </Navbar>
     </div>
